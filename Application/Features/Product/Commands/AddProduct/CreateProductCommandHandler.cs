@@ -20,7 +20,6 @@ namespace Application.Features.Product.Commands.AddProduct
         {
             var newProduct = _mapper.Map<Domain.Entities.Product>(request.productDto);
             newProduct = await _productRepository.Add(newProduct);
-            return newProduct;
         }
     }
 }

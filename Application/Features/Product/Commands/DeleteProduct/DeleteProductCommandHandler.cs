@@ -19,7 +19,7 @@ namespace Application.Features.Product.Commands.DeleteProduct
         {
             var selectedproduct = _mapper.Map<Domain.Entities.Product>(request.productDto);
             await _productRepository.DeleteAsync(selectedproduct);
-            return selectedproduct;
+            
         }
     }
 }
