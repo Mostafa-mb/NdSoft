@@ -1,10 +1,12 @@
 
+using Application.DTOs;
 using Application.IRepositories;
 using Application.Mapper;
 using Infrastructure.Data;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Reflection;
 
 namespace WebApi
 {
@@ -27,6 +29,7 @@ namespace WebApi
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnections"));
             });
             builder.Services.AddScoped<IProductRepository, ProductRepository>();
+            builder.Services.AddAutoMapper(typeof(ProductDetailsDto));
 
             var app = builder.Build();
 

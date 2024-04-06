@@ -19,7 +19,8 @@ namespace Application.Features.Product.Commands.UpdateProduct
         public Task Handle(UpdateProductCommand request, CancellationToken cancellationToken)
         {
             var newProduct = _mapper.Map<Domain.Entities.Product>(request.productDto);
-            return newProduct;
+            var result = _productRepository.Update(newProduct);
+            return result;
         }
     }
 }
