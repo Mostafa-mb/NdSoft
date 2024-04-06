@@ -11,8 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Product\Commands\DeleteProduct\" />
-    <Folder Include="Features\Product\Commands\UpdateProduct\" />
     <Folder Include="Features\Product\Queries\GetAllProducts\" />
     <Folder Include="Features\Product\Queries\GetProductDetail\" />
   </ItemGroup>
