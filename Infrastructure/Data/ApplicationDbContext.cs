@@ -23,6 +23,8 @@ namespace Infrastructure.Data
 
             builder.Entity<AppUserProduct>(p => p.HasKey(p => new { p.ProductId, p.AppUserId }));
 
+            builder.Entity<Product>().HasQueryFilter(p => p.IsAvailable);
+
 
             builder.Entity<AppUserProduct>()
                 .HasOne(p => p.AppUser)
