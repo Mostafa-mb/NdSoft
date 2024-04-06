@@ -22,6 +22,7 @@ namespace WebApi
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnections"));
             });
 
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

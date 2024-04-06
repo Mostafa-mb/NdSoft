@@ -2,24 +2,23 @@
 using AutoMapper;
 using MediatR;
 
-namespace Application.Features.Product.Commands.AddProduct
+namespace Application.Features.Product.Commands.UpdateProduct
 {
-    public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand>
+    public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand>
     {
         private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
 
-        public CreateProductCommandHandler(IProductRepository productRepository,IMapper mapper)
+        public UpdateProductCommandHandler(IProductRepository productRepository , IMapper mapper)
         {
             _productRepository = productRepository;
             _mapper = mapper;
         }
 
 
-        public async Task Handle(CreateProductCommand request, CancellationToken cancellationToken)
+        public Task Handle(UpdateProductCommand request, CancellationToken cancellationToken)
         {
             var newProduct = _mapper.Map<Domain.Entities.Product>(request.productDto);
-            newProduct = await _productRepository.Add(newProduct);
             return newProduct;
         }
     }
